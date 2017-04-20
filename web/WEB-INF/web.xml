@@ -4,9 +4,17 @@
         <servlet-name>varrestaurante</servlet-name>
         <servlet-class>servlets.varrestaurante</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewUsuario</servlet-name>
+        <servlet-class>servlets.NewUsuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>varrestaurante</servlet-name>
         <url-pattern>/varrestaurante</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewUsuario</servlet-name>
+        <url-pattern>/NewUsuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
