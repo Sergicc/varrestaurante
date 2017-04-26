@@ -1,9 +1,11 @@
+<%-- 
+    Document   : index
+    Created on : 26-abr-2017, 17:45:17
+    Author     : usu26
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>TODO supply a title</title>
@@ -28,7 +30,7 @@ and open the template in the editor.
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Menús</a>
@@ -45,19 +47,34 @@ and open the template in the editor.
                             <input class="form-control mr-sm-2" type="text" placeholder="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                         </form>-->
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Email">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Contraseña">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Acceder</button>
+                        <form action="Login" method="POST" class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="text" placeholder="mail" name="mail">
+                            <input class="form-control mr-sm-2" type="text" placeholder="pass" name="pass">
+                            <button name="login" value="entrar" class="btn btn-outline-success my-2 my-sm-0" type="submit">Acceder</button>
                         </form>
 
                     </div>
                 </nav>  
             </div>
             <br/><br/><br/>
-            <form action="NewUsuario" method="POST">
-                <input type="submit" value="Registro">
+            <form action="NewUsuario.jsp" method="POST">
+                <div align="right">
+                    <input type="submit" value="Registro">
+                </div>
             </form>
+            <%
+                String registro = (String) request.getAttribute("resultado");
+                if (registro != null) {
+            %>
+            <h1><%= registro%></h1>
+            <% } %>
+
+            <%
+                String login = (String) request.getAttribute("mail");
+                if (login != null) {
+            %>
+            <h1><%= login%></h1>
+            <% }%>
         </div>
 
     </body>
