@@ -6,16 +6,20 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -32,6 +36,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Usuarios.findByPassword", query = "SELECT u FROM Usuarios u WHERE u.password = :password")
     , @NamedQuery(name = "Usuarios.findByRol", query = "SELECT u FROM Usuarios u WHERE u.rol = :rol")})
 public class Usuarios implements Serializable {
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mail")
+    private Collection<Reservas> reservasCollection;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -138,6 +145,15 @@ public class Usuarios implements Serializable {
     @Override
     public String toString() {
         return "entities.Usuarios[ mail=" + mail + " ]";
+    }
+
+    @XmlTransient
+    public Collection<Reservas> getReservasCollection() {
+        return reservasCollection;
+    }
+
+    public void setReservasCollection(Collection<Reservas> reservasCollection) {
+        this.reservasCollection = reservasCollection;
     }
     
 }
