@@ -5,8 +5,9 @@
  */
 package servlets;
 
+import entities.Ingredientes;
 import java.io.IOException;
-import java.io.PrintWriter;
+import static java.lang.Double.parseDouble;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,10 +15,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author usu26
- */
 @WebServlet(name = "AltaIngrediente", urlPatterns = {"/AltaIngrediente"})
 public class AltaIngrediente extends HttpServlet {
 
@@ -26,36 +23,48 @@ public class AltaIngrediente extends HttpServlet {
 
     public static final String STATUS_OK = "Ingrediente introducido con éxito";
     public static final String STATUS_ERROR = "error";
-    
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet AltaIngrediente</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet AltaIngrediente at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+
+        if ("Registra el ingrediente".equals(request.getParameter("altaIngrediente"))) {
+            Integer idIngrediente = 0;
+            String nombre = request.getParameter("nombre");
+            boolean solidoLiquido = false;
+            String sl = request.getParameter("sl");
+            if (sl.equals("0")) {
+                solidoLiquido = false;
+            }
+            if (sl.equals("1")) {
+                solidoLiquido = true;
+            }
+
+            double precio_kg_l = parseDouble(request.getParameter("precioKgL"));
+
+            Ingredientes i = new Ingredientes(idIngrediente, nombre, solidoLiquido, precio_kg_l);
+
+            if (miEjb.insertIngrediente(i)) {
+                request.setAttribute("resultado", STATUS_OK);
+            } else {
+                request.setAttribute("resultado", STATUS_ERROR);
+            }
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+/**
+ * Handles the HTTP <code>GET</code> method.
+ *
+ * @param request servlet request
+ * @param response servlet response
+ * @throws ServletException if a servlet-specific error occurs
+ * @throws IOException if an I/O error occurs
+ */
+@Override
+        protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -69,7 +78,7 @@ public class AltaIngrediente extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -80,7 +89,7 @@ public class AltaIngrediente extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-    public String getServletInfo() {
+        public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 

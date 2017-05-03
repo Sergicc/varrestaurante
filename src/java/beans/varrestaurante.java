@@ -5,6 +5,7 @@
  */
 package beans;
 
+import entities.Ingredientes;
 import entities.Usuarios;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -17,8 +18,8 @@ import javax.persistence.PersistenceUnit;
  */
 @Stateless
 public class varrestaurante {
-    
-     @PersistenceUnit
+
+    @PersistenceUnit
     EntityManagerFactory emf;
 
     public boolean insertUsuario(Usuarios u) {
@@ -31,11 +32,31 @@ public class varrestaurante {
         }
         return false;
     }
+
     public boolean existUsuario(Usuarios u) {
         EntityManager em = emf.createEntityManager();
         Usuarios encontrado = em.find(Usuarios.class, u.getMail());
         em.close();
         return encontrado != null;
+    }
+
+    public boolean insertIngrediente(Ingredientes i) {
+        if (!existIngrediente(i)) {
+            EntityManager em = emf.createEntityManager();
+            em.persist(i);
+            em.close();
+            return true;
+        }
+        return false;
+    }
+
+    public boolean existIngrediente(Ingredientes i) {
+        //LO KE HA DIT LA MAR, buscar lista por nombre
+        EntityManager em = emf.createEntityManager();
+//        Usuarios encontrado = em.find(Usuarios.class, i.getMail());
+        em.close();
+//        return encontrado != null;
+        return false;
     }
 
     // Add business logic below. (Right-click in editor and choose
