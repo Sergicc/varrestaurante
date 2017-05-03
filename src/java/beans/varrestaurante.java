@@ -37,6 +37,15 @@ public class varrestaurante {
         em.close();
         return encontrado != null;
     }
+    
+    public String login(String email, String password){
+        
+        if(email.equals(password)){
+            return "Valid User!!!";
+        }else{
+            return "Invalid User!!!";
+        }
+    }
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")

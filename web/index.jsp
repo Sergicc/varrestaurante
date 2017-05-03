@@ -50,7 +50,7 @@
                         <!--proba sergi 2-->
                         <form action="Login" method="POST" class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="text" placeholder="mail" name="mail">
-                            <input class="form-control mr-sm-2" type="text" placeholder="pass" name="pass">
+                            <input class="form-control mr-sm-2" type="password" placeholder="pass" name="pass">
                             <button name="login" value="entrar" class="btn btn-outline-success my-2 my-sm-0" type="submit">Acceder</button>
                         </form>
 
