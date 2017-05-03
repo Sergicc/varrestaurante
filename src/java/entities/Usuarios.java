@@ -37,14 +37,11 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Usuarios.findByRol", query = "SELECT u FROM Usuarios u WHERE u.rol = :rol")})
 public class Usuarios implements Serializable {
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mail")
-    private Collection<Reservas> reservasCollection;
-
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 10)
+    @Size(min = 1, max = 50)
     @Column(name = "mail")
     private String mail;
     @Basic(optional = false)
@@ -66,6 +63,8 @@ public class Usuarios implements Serializable {
     @NotNull
     @Column(name = "rol")
     private boolean rol;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mail")
+    private Collection<Reservas> reservasCollection;
 
     public Usuarios() {
     }
@@ -122,6 +121,15 @@ public class Usuarios implements Serializable {
         this.rol = rol;
     }
 
+    @XmlTransient
+    public Collection<Reservas> getReservasCollection() {
+        return reservasCollection;
+    }
+
+    public void setReservasCollection(Collection<Reservas> reservasCollection) {
+        this.reservasCollection = reservasCollection;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -145,15 +153,6 @@ public class Usuarios implements Serializable {
     @Override
     public String toString() {
         return "entities.Usuarios[ mail=" + mail + " ]";
-    }
-
-    @XmlTransient
-    public Collection<Reservas> getReservasCollection() {
-        return reservasCollection;
-    }
-
-    public void setReservasCollection(Collection<Reservas> reservasCollection) {
-        this.reservasCollection = reservasCollection;
     }
     
 }
