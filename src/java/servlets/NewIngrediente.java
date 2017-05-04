@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "AltaIngrediente", urlPatterns = {"/AltaIngrediente"})
-public class AltaIngrediente extends HttpServlet {
+public class NewIngrediente extends HttpServlet {
 
     @EJB
     beans.varrestaurante miEjb;
