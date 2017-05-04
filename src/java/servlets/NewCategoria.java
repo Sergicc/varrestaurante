@@ -5,9 +5,8 @@
  */
 package servlets;
 
-import entities.Ingredientes;
+import entities.Categoria;
 import java.io.IOException;
-import static java.lang.Double.parseDouble;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,36 +14,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "NewIngrediente", urlPatterns = {"/NewIngrediente"})
-public class NewIngrediente extends HttpServlet {
+
+
+@WebServlet(name = "NewCategoria", urlPatterns = {"/NewCategoria"})
+public class NewCategoria extends HttpServlet {
 
     @EJB
     beans.varrestaurante miEjb;
-
-    public static final String STATUS_OK = "Ingrediente introducido con éxito";
+    
+    public static final String STATUS_OK = "Categoría creada con éxito";
     public static final String STATUS_ERROR = "error";
-
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        if ("Registra el ingrediente".equals(request.getParameter("altaIngrediente"))) {
-            Integer idIngrediente = 0;
+        
+        if ("Crea la categoría".equals(request.getParameter("altaCategoria"))) {
+            Integer idCategoria = 0;
             String nombre = request.getParameter("nombre");
-            boolean solidoLiquido = false;
-            String sl = request.getParameter("sl");
-            if (sl.equals("0")) {
-                solidoLiquido = false;
-            }
-            if (sl.equals("1")) {
-                solidoLiquido = true;
-            }
+          
+            Categoria c = new Categoria(idCategoria, nombre);
 
-            double precio_kg_l = parseDouble(request.getParameter("precioKgL"));
-
-            Ingredientes i = new Ingredientes(idIngrediente, nombre, solidoLiquido, precio_kg_l);
-
-            if (miEjb.insertIngrediente(i)) {
+            if (miEjb.insertCategoria(c)) {
                 request.setAttribute("resultado", STATUS_OK);
             } else {
                 request.setAttribute("resultado", STATUS_ERROR);
@@ -53,18 +44,17 @@ public class NewIngrediente extends HttpServlet {
         }
     }
 
-
-// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-/**
- * Handles the HTTP <code>GET</code> method.
- *
- * @param request servlet request
- * @param response servlet response
- * @throws ServletException if a servlet-specific error occurs
- * @throws IOException if an I/O error occurs
- */
-@Override
-        protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -78,7 +68,7 @@ public class NewIngrediente extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -89,7 +79,7 @@ public class NewIngrediente extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-        public String getServletInfo() {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 

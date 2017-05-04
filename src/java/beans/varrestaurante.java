@@ -5,6 +5,7 @@
  */
 package beans;
 
+import entities.Categoria;
 import entities.Ingredientes;
 import entities.Usuarios;
 import javax.ejb.Stateless;
@@ -70,4 +71,23 @@ public class varrestaurante {
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
+
+    public boolean insertCategoria(Categoria c) {
+        if (!existCategoria(c)) {
+            EntityManager em = emf.createEntityManager();
+            em.persist(c);
+            em.close();
+            return true;
+        }
+        return false;
+    }
+
+    public boolean existCategoria(Categoria c) {
+        //LO KE HA DIT LA MAR, buscar lista por nombre
+        EntityManager em = emf.createEntityManager();
+//        Usuarios encontrado = em.find(Usuarios.class, i.getMail());
+        em.close();
+//        return encontrado != null;
+        return false;
+    }
 }
