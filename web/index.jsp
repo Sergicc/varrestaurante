@@ -47,7 +47,7 @@
                             <input class="form-control mr-sm-2" type="text" placeholder="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                         </form>-->
-                        <!--proba sergi 2-->
+                        <!--proba sergi 3-->
                         <form action="Login" method="POST" class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="text" placeholder="mail" name="mail">
                             <input class="form-control mr-sm-2" type="password" placeholder="pass" name="pass">
