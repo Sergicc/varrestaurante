@@ -8,10 +8,12 @@ package beans;
 import entities.Categoria;
 import entities.Ingredientes;
 import entities.Usuarios;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
+import javax.persistence.Query;
 
 /**
  *
@@ -40,12 +42,12 @@ public class varrestaurante {
         em.close();
         return encontrado != null;
     }
-    
-    public String login(String email, String password){
-        
-        if(email.equals(password)){
+
+    public String login(String email, String password) {
+
+        if (email.equals(password)) {
             return "Valid User!!!";
-        }else{
+        } else {
             return "Invalid User!!!";
         }
     }
@@ -61,17 +63,23 @@ public class varrestaurante {
     }
 
     public boolean existIngrediente(Ingredientes i) {
-        //LO KE HA DIT LA MAR, buscar lista por nombre
+        //Buscar lista por nombre
         EntityManager em = emf.createEntityManager();
-//        Usuarios encontrado = em.find(Usuarios.class, i.getMail());
+        // Necessitem fer la consulta per nom
+        Query q = em.createNamedQuery("Ingredientes.findByNombre");
+        q.setParameter("nombre", i.getNombre());
+        List<Ingredientes> resultado = q.getResultList();
         em.close();
-//        return encontrado != null;
-        return false;
+
+        if (resultado.isEmpty()) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
-
     public boolean insertCategoria(Categoria c) {
         if (!existCategoria(c)) {
             EntityManager em = emf.createEntityManager();
@@ -83,11 +91,18 @@ public class varrestaurante {
     }
 
     public boolean existCategoria(Categoria c) {
-        //LO KE HA DIT LA MAR, buscar lista por nombre
+        //Buscar lista por nombre
         EntityManager em = emf.createEntityManager();
-//        Usuarios encontrado = em.find(Usuarios.class, i.getMail());
+        Query q = em.createNamedQuery("Categoria.findByNombre");
+        q.setParameter("nombre", c.getNombre());
+        List<Categoria> resultado = q.getResultList();
+
         em.close();
-//        return encontrado != null;
-        return false;
+
+        if (resultado.isEmpty()) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }

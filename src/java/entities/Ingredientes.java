@@ -74,10 +74,20 @@ public class Ingredientes implements Serializable {
         this.idIngrediente = idIngrediente;
     }
 
-    public Ingredientes(Integer idIngrediente, String nombre, boolean solidoLiquido, double precioKgL) {
+//    public Ingredientes(Integer idIngrediente, String nombre, boolean solidoLiquido, Integer gramosTotal, double precioKgL) {
+//        this.idIngrediente = idIngrediente;
+//        this.nombre = nombre;
+//        this.solidoLiquido = solidoLiquido;
+//        this.gramosTotal = gramosTotal;
+//        this.precioKgL = precioKgL;
+//    }
+    
+    public Ingredientes(Integer idIngrediente, String nombre, boolean solidoLiquido, Integer gramosTotal, Integer mililitrosTotal, double precioKgL) {
         this.idIngrediente = idIngrediente;
         this.nombre = nombre;
         this.solidoLiquido = solidoLiquido;
+        this.gramosTotal = gramosTotal;
+        this.mililitrosTotal = mililitrosTotal;
         this.precioKgL = precioKgL;
     }
 

@@ -8,6 +8,7 @@ package servlets;
 import entities.Ingredientes;
 import java.io.IOException;
 import static java.lang.Double.parseDouble;
+import static java.lang.Integer.parseInt;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +22,7 @@ public class NewIngrediente extends HttpServlet {
     @EJB
     beans.varrestaurante miEjb;
 
-    public static final String STATUS_OK = "Ingrediente introducido con éxito";
+    public static final String STATUS_OK = "Ingrediente introducido con éxito. <a href='NewIngrediente.jsp'>Introducir otro</a>";
     public static final String STATUS_ERROR = "error";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -31,6 +32,15 @@ public class NewIngrediente extends HttpServlet {
         if ("Registra el ingrediente".equals(request.getParameter("altaIngrediente"))) {
             Integer idIngrediente = 0;
             String nombre = request.getParameter("nombre");
+            Integer gramosTotal = null;
+            Integer mililitrosTotal = null;
+            if (request.getParameterMap().containsKey("gramosTotal")) {
+                gramosTotal = parseInt(request.getParameter("gramosTotal"));
+            }
+            if (request.getParameterMap().containsKey("mililitrosTotal")) {
+                mililitrosTotal = parseInt(request.getParameter("mililitrosTotal"));
+            }
+
             boolean solidoLiquido = false;
             String sl = request.getParameter("sl");
             if (sl.equals("0")) {
@@ -42,29 +52,29 @@ public class NewIngrediente extends HttpServlet {
 
             double precio_kg_l = parseDouble(request.getParameter("precioKgL"));
 
-            Ingredientes i = new Ingredientes(idIngrediente, nombre, solidoLiquido, precio_kg_l);
 
+            Ingredientes i = new Ingredientes(idIngrediente, nombre, solidoLiquido, gramosTotal, mililitrosTotal, precio_kg_l);
             if (miEjb.insertIngrediente(i)) {
                 request.setAttribute("resultado", STATUS_OK);
             } else {
                 request.setAttribute("resultado", STATUS_ERROR);
             }
             request.getRequestDispatcher("/index.jsp").forward(request, response);
+
         }
     }
 
-
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-/**
- * Handles the HTTP <code>GET</code> method.
- *
- * @param request servlet request
- * @param response servlet response
- * @throws ServletException if a servlet-specific error occurs
- * @throws IOException if an I/O error occurs
- */
-@Override
-        protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -78,7 +88,7 @@ public class NewIngrediente extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -89,7 +99,7 @@ public class NewIngrediente extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-        public String getServletInfo() {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
