@@ -13,6 +13,14 @@
         <url-pattern>/NewUsuario</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>NewIngrediente</servlet-name>
+        <url-pattern>/NewIngrediente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewCategoria</servlet-name>
+        <url-pattern>/NewCategoria</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
