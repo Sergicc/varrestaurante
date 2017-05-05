@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 
 /**
  *
- * @author usu26
+ * @author 53868459K
  */
 @Embeddable
 public class PlatoIngredientesPK implements Serializable {

@@ -23,22 +23,20 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author usu26
+ * @author 53868459K
  */
 @Entity
 @Table(name = "reservas")
-@XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Reservas.findAll", query = "SELECT r FROM Reservas r")
-    , @NamedQuery(name = "Reservas.findByIdReserva", query = "SELECT r FROM Reservas r WHERE r.idReserva = :idReserva")
-    , @NamedQuery(name = "Reservas.findByFecha", query = "SELECT r FROM Reservas r WHERE r.fecha = :fecha")
-    , @NamedQuery(name = "Reservas.findByTurno", query = "SELECT r FROM Reservas r WHERE r.turno = :turno")
-    , @NamedQuery(name = "Reservas.findByAforo", query = "SELECT r FROM Reservas r WHERE r.aforo = :aforo")
-    , @NamedQuery(name = "Reservas.findByComensales", query = "SELECT r FROM Reservas r WHERE r.comensales = :comensales")})
+    @NamedQuery(name = "Reservas.findAll", query = "SELECT r FROM Reservas r"),
+    @NamedQuery(name = "Reservas.findByIdReserva", query = "SELECT r FROM Reservas r WHERE r.idReserva = :idReserva"),
+    @NamedQuery(name = "Reservas.findByFecha", query = "SELECT r FROM Reservas r WHERE r.fecha = :fecha"),
+    @NamedQuery(name = "Reservas.findByTurno", query = "SELECT r FROM Reservas r WHERE r.turno = :turno"),
+    @NamedQuery(name = "Reservas.findByAforo", query = "SELECT r FROM Reservas r WHERE r.aforo = :aforo"),
+    @NamedQuery(name = "Reservas.findByComensales", query = "SELECT r FROM Reservas r WHERE r.comensales = :comensales")})
 public class Reservas implements Serializable {
 
     private static final long serialVersionUID = 1L;

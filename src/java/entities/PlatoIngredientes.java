@@ -14,21 +14,19 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author usu26
+ * @author 53868459K
  */
 @Entity
 @Table(name = "plato_ingredientes")
-@XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "PlatoIngredientes.findAll", query = "SELECT p FROM PlatoIngredientes p")
-    , @NamedQuery(name = "PlatoIngredientes.findByIdPlato", query = "SELECT p FROM PlatoIngredientes p WHERE p.platoIngredientesPK.idPlato = :idPlato")
-    , @NamedQuery(name = "PlatoIngredientes.findByIdIngrediente", query = "SELECT p FROM PlatoIngredientes p WHERE p.platoIngredientesPK.idIngrediente = :idIngrediente")
-    , @NamedQuery(name = "PlatoIngredientes.findByGramos", query = "SELECT p FROM PlatoIngredientes p WHERE p.gramos = :gramos")
-    , @NamedQuery(name = "PlatoIngredientes.findByMililitros", query = "SELECT p FROM PlatoIngredientes p WHERE p.mililitros = :mililitros")})
+    @NamedQuery(name = "PlatoIngredientes.findAll", query = "SELECT p FROM PlatoIngredientes p"),
+    @NamedQuery(name = "PlatoIngredientes.findByIdPlato", query = "SELECT p FROM PlatoIngredientes p WHERE p.platoIngredientesPK.idPlato = :idPlato"),
+    @NamedQuery(name = "PlatoIngredientes.findByIdIngrediente", query = "SELECT p FROM PlatoIngredientes p WHERE p.platoIngredientesPK.idIngrediente = :idIngrediente"),
+    @NamedQuery(name = "PlatoIngredientes.findByGramos", query = "SELECT p FROM PlatoIngredientes p WHERE p.gramos = :gramos"),
+    @NamedQuery(name = "PlatoIngredientes.findByMililitros", query = "SELECT p FROM PlatoIngredientes p WHERE p.mililitros = :mililitros")})
 public class PlatoIngredientes implements Serializable {
 
     private static final long serialVersionUID = 1L;

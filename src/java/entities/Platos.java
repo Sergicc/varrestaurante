@@ -22,22 +22,19 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author usu26
+ * @author 53868459K
  */
 @Entity
 @Table(name = "platos")
-@XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Platos.findAll", query = "SELECT p FROM Platos p")
-    , @NamedQuery(name = "Platos.findByIdPlato", query = "SELECT p FROM Platos p WHERE p.idPlato = :idPlato")
-    , @NamedQuery(name = "Platos.findByNombre", query = "SELECT p FROM Platos p WHERE p.nombre = :nombre")
-    , @NamedQuery(name = "Platos.findByPrecio", query = "SELECT p FROM Platos p WHERE p.precio = :precio")
-    , @NamedQuery(name = "Platos.findByTipo", query = "SELECT p FROM Platos p WHERE p.tipo = :tipo")})
+    @NamedQuery(name = "Platos.findAll", query = "SELECT p FROM Platos p"),
+    @NamedQuery(name = "Platos.findByIdPlato", query = "SELECT p FROM Platos p WHERE p.idPlato = :idPlato"),
+    @NamedQuery(name = "Platos.findByNombre", query = "SELECT p FROM Platos p WHERE p.nombre = :nombre"),
+    @NamedQuery(name = "Platos.findByPrecio", query = "SELECT p FROM Platos p WHERE p.precio = :precio"),
+    @NamedQuery(name = "Platos.findByTipo", query = "SELECT p FROM Platos p WHERE p.tipo = :tipo")})
 public class Platos implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -117,7 +114,6 @@ public class Platos implements Serializable {
         this.tipo = tipo;
     }
 
-    @XmlTransient
     public Collection<PlatoIngredientes> getPlatoIngredientesCollection() {
         return platoIngredientesCollection;
     }
@@ -126,7 +122,6 @@ public class Platos implements Serializable {
         this.platoIngredientesCollection = platoIngredientesCollection;
     }
 
-    @XmlTransient
     public Collection<Menu> getMenuCollection() {
         return menuCollection;
     }
@@ -135,7 +130,6 @@ public class Platos implements Serializable {
         this.menuCollection = menuCollection;
     }
 
-    @XmlTransient
     public Collection<Menu> getMenuCollection1() {
         return menuCollection1;
     }
@@ -144,7 +138,6 @@ public class Platos implements Serializable {
         this.menuCollection1 = menuCollection1;
     }
 
-    @XmlTransient
     public Collection<Menu> getMenuCollection2() {
         return menuCollection2;
     }

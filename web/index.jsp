@@ -58,25 +58,24 @@
                 </nav>  
             </div>
             <br/><br/><br/>
-            <form action="NewUsuario.jsp" method="POST">
-                <div align="right">
-                    <input type="submit" value="Registro">
-                </div>
-            </form>
-            <%
-                String registro = (String) request.getAttribute("resultado");
-                if (registro != null) {
-            %>
-            <h1><%= registro%></h1>
-            <% } %>
+                <form action="NewUsuario.jsp" method="POST">
+                     <div align="right">
+                         <input type="submit" value="Registro">
+                     </div>
+                 </form> 
+
 
             <%
-                String login = (String) request.getAttribute("mail");
-                if (login != null) {
-            %>
-            <h1><%= login%></h1>
-            <% }%>
+                    String registro = (String) request.getAttribute("resultado");
+                    if (registro != null) {
+                %>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <strong><%= registro%></strong>
+                <% }%>
+            </div>
         </div>
-
     </body>
 </html>

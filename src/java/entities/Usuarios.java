@@ -18,23 +18,20 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author usu26
+ * @author 53868459K
  */
 @Entity
 @Table(name = "usuarios")
-@XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Usuarios.findAll", query = "SELECT u FROM Usuarios u")
-    , @NamedQuery(name = "Usuarios.findByMail", query = "SELECT u FROM Usuarios u WHERE u.mail = :mail")
-    , @NamedQuery(name = "Usuarios.findByNombre", query = "SELECT u FROM Usuarios u WHERE u.nombre = :nombre")
-    , @NamedQuery(name = "Usuarios.findByApellidos", query = "SELECT u FROM Usuarios u WHERE u.apellidos = :apellidos")
-    , @NamedQuery(name = "Usuarios.findByPassword", query = "SELECT u FROM Usuarios u WHERE u.password = :password")
-    , @NamedQuery(name = "Usuarios.findByRol", query = "SELECT u FROM Usuarios u WHERE u.rol = :rol")})
+    @NamedQuery(name = "Usuarios.findAll", query = "SELECT u FROM Usuarios u"),
+    @NamedQuery(name = "Usuarios.findByMail", query = "SELECT u FROM Usuarios u WHERE u.mail = :mail"),
+    @NamedQuery(name = "Usuarios.findByNombre", query = "SELECT u FROM Usuarios u WHERE u.nombre = :nombre"),
+    @NamedQuery(name = "Usuarios.findByApellidos", query = "SELECT u FROM Usuarios u WHERE u.apellidos = :apellidos"),
+    @NamedQuery(name = "Usuarios.findByPassword", query = "SELECT u FROM Usuarios u WHERE u.password = :password"),
+    @NamedQuery(name = "Usuarios.findByRol", query = "SELECT u FROM Usuarios u WHERE u.rol = :rol")})
 public class Usuarios implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -121,7 +118,6 @@ public class Usuarios implements Serializable {
         this.rol = rol;
     }
 
-    @XmlTransient
     public Collection<Reservas> getReservasCollection() {
         return reservasCollection;
     }

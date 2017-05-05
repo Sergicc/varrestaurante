@@ -20,27 +20,29 @@ public class Login extends HttpServlet {
 
     @EJB
     beans.varrestaurante miEjb;
-    
-    
+
     public static final String STATUS_OK = "USUARIO REGITRADO K FIPAS";
     public static final String STATUS_ERROR = "error";
-    
+
     String email, password, result;
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         if ("entrar".equals(request.getParameter("login"))) {
             email = request.getParameter("mail");
             password = request.getParameter("pass");
-            result = miEjb.login(email, password);
-            
-            // Verificamos si los datos son correctos con la bbdd
-            
-            // Si lo son guardamos el user en variable de sesion
-            request.getSession(true).setAttribute("mail", email);
 
-            response.sendRedirect(request.getContextPath() + "/index.jsp");
+            // Verificamos si los datos son correctos con la bbdd
+            if (miEjb.login(email, password)) {
+                // Si lo son guardamos el user en variable de sesion
+                request.getSession(true).setAttribute("mail", email);
+                response.sendRedirect(request.getContextPath() + "/indexUser.jsp");
+            } else {
+                request.setAttribute("resultado", "Usuario o contraseña incorrecta.");
+                 request.getRequestDispatcher("/index.jsp").forward(request, response);
+            }
+            
         }
     }
 

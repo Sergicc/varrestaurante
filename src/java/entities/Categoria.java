@@ -20,20 +20,17 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author usu26
+ * @author 53868459K
  */
 @Entity
 @Table(name = "categoria")
-@XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Categoria.findAll", query = "SELECT c FROM Categoria c")
-    , @NamedQuery(name = "Categoria.findByIdCategoria", query = "SELECT c FROM Categoria c WHERE c.idCategoria = :idCategoria")
-    , @NamedQuery(name = "Categoria.findByNombre", query = "SELECT c FROM Categoria c WHERE c.nombre = :nombre")})
+    @NamedQuery(name = "Categoria.findAll", query = "SELECT c FROM Categoria c"),
+    @NamedQuery(name = "Categoria.findByIdCategoria", query = "SELECT c FROM Categoria c WHERE c.idCategoria = :idCategoria"),
+    @NamedQuery(name = "Categoria.findByNombre", query = "SELECT c FROM Categoria c WHERE c.nombre = :nombre")})
 public class Categoria implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -80,7 +77,6 @@ public class Categoria implements Serializable {
         this.nombre = nombre;
     }
 
-    @XmlTransient
     public Collection<Menu> getMenuCollection() {
         return menuCollection;
     }
@@ -89,7 +85,6 @@ public class Categoria implements Serializable {
         this.menuCollection = menuCollection;
     }
 
-    @XmlTransient
     public Collection<Platos> getPlatosCollection() {
         return platosCollection;
     }

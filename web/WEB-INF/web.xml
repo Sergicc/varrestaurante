@@ -8,6 +8,14 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>servlets.Login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewCategoria</servlet-name>
+        <servlet-class>servlets.NewCategoria</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewIngrediente</servlet-name>
+        <servlet-class>servlets.NewIngrediente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewUsuario</servlet-name>
         <url-pattern>/NewUsuario</url-pattern>

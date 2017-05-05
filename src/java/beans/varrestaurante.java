@@ -43,12 +43,20 @@ public class varrestaurante {
         return encontrado != null;
     }
 
-    public String login(String email, String password) {
-
-        if (email.equals(password)) {
-            return "Valid User!!!";
+    public boolean login(String email, String password) {
+        EntityManager em = emf.createEntityManager();
+        //TODO tenir en compte que ha de ser rol 1 (usuario)
+        Usuarios encontrado = em.find(Usuarios.class, email);
+        em.close();
+        if (encontrado == null) {
+            return false;
         } else {
-            return "Invalid User!!!";
+            if (encontrado.getPassword().equals(password)) {
+                if (encontrado.getRol() == false) {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 
