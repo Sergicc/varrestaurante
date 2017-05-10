@@ -18,6 +18,14 @@
     </servlet>
     <servlet>
         <servlet-name>AllPlatos</servlet-name>
+        <servlet-class>servlets.AllPlatos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewPlato</servlet-name>
+        <servlet-class>servlets.NewPlato</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AllCategorias</servlet-name>
         <servlet-class>servlets.AllCategorias</servlet-class>
     </servlet>
     <servlet-mapping>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>AllPlatos</servlet-name>
         <url-pattern>/AllPlatos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewPlato</servlet-name>
+        <url-pattern>/NewPlato</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AllCategorias</servlet-name>
+        <url-pattern>/AllCategorias</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

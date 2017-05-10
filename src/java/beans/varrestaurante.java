@@ -7,6 +7,7 @@ package beans;
 
 import entities.Categoria;
 import entities.Ingredientes;
+import entities.Platos;
 import entities.Usuarios;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -116,5 +117,25 @@ public class varrestaurante {
     
         public List<Categoria> selectAllCategorias() {
         return emf.createEntityManager().createNamedQuery("Categoria.findAll").getResultList();
+    }
+        
+        
+    public boolean insertPlato(Platos p) {
+        if (!existPlato(p)) {
+            EntityManager em = emf.createEntityManager();
+            em.persist(p);
+            em.close();
+            return true;
+        }
+        return false;
+    }
+
+    public boolean existPlato(Platos p) {
+        //LO KE HA DIT LA MAR, buscar lista por nombre
+        EntityManager em = emf.createEntityManager();
+//        Usuarios encontrado = em.find(Usuarios.class, i.getMail());
+        em.close();
+//        return encontrado != null;
+        return false;
     }
 }
