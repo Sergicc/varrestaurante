@@ -113,4 +113,8 @@ public class varrestaurante {
             return true;
         }
     }
+    
+        public List<Categoria> selectAllCategorias() {
+        return emf.createEntityManager().createNamedQuery("Categoria.findAll").getResultList();
+    }
 }

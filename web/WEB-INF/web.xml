@@ -16,6 +16,10 @@
         <servlet-name>NewIngrediente</servlet-name>
         <servlet-class>servlets.NewIngrediente</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AllPlatos</servlet-name>
+        <servlet-class>servlets.AllCategorias</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewUsuario</servlet-name>
         <url-pattern>/NewUsuario</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AllPlatos</servlet-name>
+        <url-pattern>/AllPlatos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
