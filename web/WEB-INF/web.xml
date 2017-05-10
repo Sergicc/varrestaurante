@@ -32,10 +32,6 @@
         <servlet-name>LoginChef</servlet-name>
         <servlet-class>servlets.LoginChef</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>AllCategorias</servlet-name>
-        <servlet-class>servlets.AllCategorias</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>NewUsuario</servlet-name>
         <url-pattern>/NewUsuario</url-pattern>
@@ -55,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>AllPlatos</servlet-name>
         <url-pattern>/AllPlatos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginChef</servlet-name>
+        <url-pattern>/LoginChef</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>NewPlato</servlet-name>

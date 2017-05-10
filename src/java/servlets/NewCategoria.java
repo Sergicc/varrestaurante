@@ -29,18 +29,18 @@ public class NewCategoria extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        if ("Crea la categoría".equals(request.getParameter("altaCategoria"))) {
-            Integer idCategoria = 0;
+        if ("Nueva Categoria".equals(request.getParameter("altaCategoria"))) {
+            Integer id_categoria = 0;
             String nombre = request.getParameter("nombre");
           
-            Categoria c = new Categoria(idCategoria, nombre);
+            Categoria c = new Categoria(id_categoria, nombre);
 
             if (miEjb.insertCategoria(c)) {
-                request.setAttribute("resultado", STATUS_OK);
+                request.setAttribute("resultadoChef", STATUS_OK);
             } else {
-                request.setAttribute("resultado", STATUS_ERROR);
+                request.setAttribute("resultadoChef", STATUS_ERROR);
             }
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            request.getRequestDispatcher("/indexChef.jsp").forward(request, response);
         }
     }
 

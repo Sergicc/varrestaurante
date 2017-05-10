@@ -25,5 +25,26 @@
         <%= loginChef%>
         <% }%>
         
+         <%
+                    String registro = (String) request.getAttribute("resultadoChef");
+                    if (registro != null) {
+                %>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <strong><%= registro%></strong>
+                <% }%>
+            </div>
+            
+            
+            
+        
+        <form action="NewCategoria" method="POST">
+            <p>Nombre de la categoría: <input type="text" name="nombre"></p>
+
+            <input type="submit" name="altaCategoria" value="Nueva Categoria">
+        </form>
+        
     </body>
 </html>
