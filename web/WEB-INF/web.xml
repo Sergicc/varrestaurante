@@ -20,6 +20,14 @@
         <servlet-name>AllPlatos</servlet-name>
         <servlet-class>servlets.AllCategorias</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginChef</servlet-name>
+        <servlet-class>servlets.LoginChef</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AllCategorias</servlet-name>
+        <servlet-class>servlets.AllCategorias</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewUsuario</servlet-name>
         <url-pattern>/NewUsuario</url-pattern>
@@ -40,12 +48,20 @@
         <servlet-name>AllPlatos</servlet-name>
         <url-pattern>/AllPlatos</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginChef</servlet-name>
+        <url-pattern>/LoginChef</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AllCategorias</servlet-name>
+        <url-pattern>/AllCategorias</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 </web-app>

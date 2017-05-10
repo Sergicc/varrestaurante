@@ -59,6 +59,23 @@ public class varrestaurante {
             return false;
         }
     }
+    
+    public boolean loginChef(String emailChef, String password) {
+        EntityManager em = emf.createEntityManager();
+        //TODO tenir en compte que ha de ser rol 1 (usuario)
+        Usuarios encontrado = em.find(Usuarios.class, emailChef);
+        em.close();
+        if (encontrado == null) {
+            return false;
+        } else {
+            if (encontrado.getPassword().equals(password)) {
+                if (encontrado.getRol() == true) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
 
     public boolean insertIngrediente(Ingredientes i) {
         if (!existIngrediente(i)) {
