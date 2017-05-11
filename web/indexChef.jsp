@@ -38,7 +38,9 @@
             </div>
             
             
-            
+        <form action="AllCategorias">
+            <input type="submit" value="All Categorias">
+        </form>
         
         <form action="NewCategoria" method="POST">
             <p>Nombre de la categoría: <input type="text" name="nombre"></p>

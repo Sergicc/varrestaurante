@@ -30,10 +30,10 @@ public class NewCategoria extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         if ("Nueva Categoria".equals(request.getParameter("altaCategoria"))) {
-            Integer id_categoria = 0;
+            Integer idCategoria = 0;
             String nombre = request.getParameter("nombre");
           
-            Categoria c = new Categoria(id_categoria, nombre);
+            Categoria c = new Categoria(idCategoria, nombre);
 
             if (miEjb.insertCategoria(c)) {
                 request.setAttribute("resultadoChef", STATUS_OK);

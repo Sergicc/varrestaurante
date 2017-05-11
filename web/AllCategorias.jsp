@@ -17,13 +17,16 @@
         <h1>Categorias</h1>
         <table>
             <tr>
-                <th>Name</th>             
+                <th>IdCategoria</th>
+                <th>Nombre</th>             
             </tr>
         <% 
         List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias");
         for (Categoria categoria : categorias) {
             %>
             <tr>
+                
+                <td><%= categoria.getIdCategoria() %></td> 
                 <td><%= categoria.getNombre() %></td> 
             </tr>
         <% }
