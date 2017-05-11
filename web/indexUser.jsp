@@ -58,11 +58,23 @@
                 </nav>  
             </div>
             <br/><br/><br/>
-       <!--     <form action="NewUsuario.jsp" method="POST">
+            <%
+                    String registro = (String) request.getAttribute("resultado");
+                    if (registro != null) {
+                %>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <strong><%= registro%></strong>
+                <% }%>
+            </div>
+            
+           <form action="NewReserva.jsp" method="POST">
                 <div align="right">
-                    <input type="submit" value="Registro">
+                    <input type="submit" value="Haz tu reserva">
                 </div>
-            </form> -->  
+            </form> 
         </div>
 
     </body>

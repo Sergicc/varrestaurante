@@ -73,10 +73,13 @@ public class Reservas implements Serializable {
         this.idReserva = idReserva;
     }
 
-    public Reservas(Integer idReserva, Date fecha, int comensales) {
+    public Reservas(Integer idReserva, Usuarios mail, Date fecha, boolean turno, int comensales, String comentario) {
         this.idReserva = idReserva;
         this.fecha = fecha;
+        this.turno = turno;
         this.comensales = comensales;
+        this.mail = mail;
+        this.comentario = comentario;
     }
 
     public Integer getIdReserva() {
