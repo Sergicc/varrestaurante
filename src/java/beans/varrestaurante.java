@@ -158,6 +158,7 @@ public class varrestaurante {
     }
     
     public boolean insertReserva(Reservas r) {
+        
         EntityManager em = emf.createEntityManager();
             em.persist(r);
             em.close();

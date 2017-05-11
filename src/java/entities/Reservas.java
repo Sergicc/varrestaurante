@@ -36,6 +36,8 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "Reservas.findByFecha", query = "SELECT r FROM Reservas r WHERE r.fecha = :fecha"),
     @NamedQuery(name = "Reservas.findByTurno", query = "SELECT r FROM Reservas r WHERE r.turno = :turno"),
     @NamedQuery(name = "Reservas.findByAforo", query = "SELECT r FROM Reservas r WHERE r.aforo = :aforo"),
+    //TODO RETORNAR TANTS COMENSALES PER DIA DE RESERVA
+    @NamedQuery(name = "Reservas.findComensalesSUM", query = "SELECT r.comensales FROM Reservas r "),
     @NamedQuery(name = "Reservas.findByComensales", query = "SELECT r FROM Reservas r WHERE r.comensales = :comensales")})
 public class Reservas implements Serializable {
 
