@@ -38,7 +38,23 @@ public class AllCategorias extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         List<Categoria> categorias = miEjb.selectAllCategorias();
         request.setAttribute("categorias", categorias);
-        request.getRequestDispatcher("/AllCategorias.jsp").forward(request, response);
+        
+        
+          if ("All Categorias".equals(request.getParameter("NuevaCategoria"))) {
+          
+          request.getRequestDispatcher("/AllCategorias.jsp").forward(request, response);
+          
+          
+          }
+          
+           
+          if ("New Plato".equals(request.getParameter("NuevoPlato"))) {
+          
+          request.getRequestDispatcher("/NewPlato.jsp").forward(request, response);
+          
+          
+          }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

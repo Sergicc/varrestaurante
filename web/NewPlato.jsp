@@ -4,6 +4,8 @@
     Author     : 46422520x
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="entities.Categoria"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,12 +19,19 @@
 
             <p>Nombre: <input type="text" name="nombre"></p>
             <p>Precio: <input type="number" name="precio"></p>
-            <p>Categoria: <select name="categoria">
-                    <option value="1">Mediterraneo</option> 
-                    <option value="2">Americano</option> 
-                    <option value="3">Asiatico</option>
-                    <option value="4">Oriente Medio</option> 
-                </select>
+            
+             <p>Categoria: <select name="categorias">
+            <% 
+        List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias");
+        for (Categoria categoria : categorias) {
+            %>
+            
+            <option value="<%= categoria.getIdCategoria() %>"><%= categoria.getNombre() %></option>
+
+        <% }
+        %>
+        </select>
+        
             <p>Tipo: <select name="tipo">
                     <option value="1">Primer plato</option> 
                     <option value="2">Segundo plato</option> 
@@ -30,7 +39,7 @@
                 </select>
 
 
-                <input type="submit" name="alta" value="AltaPlato">
+                <input type="submit" name="alta" value="Nuevo Plato">
         </form>
 
     </body>

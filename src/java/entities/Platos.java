@@ -75,11 +75,12 @@ public class Platos implements Serializable {
         this.idPlato = idPlato;
     }
 
-    public Platos(Integer idPlato, String nombre, double precio, int tipo) {
+    public Platos(Integer idPlato, String nombre, double precio, Categoria categoria, int tipo) {
         this.idPlato = idPlato;
         this.nombre = nombre;
         this.precio = precio;
         this.tipo = tipo;
+        this.idCategoria = categoria;
     }
 
     public Integer getIdPlato() {

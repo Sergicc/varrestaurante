@@ -6,6 +6,7 @@
 package servlets;
 
 import beans.varrestaurante;
+import entities.Categoria;
 import entities.Platos;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -33,22 +34,23 @@ public class NewPlato extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        if ("Registra el plato".equals(request.getParameter("NewPlato"))) {
+        if ("Nuevo Plato".equals(request.getParameter("alta"))) {
             Integer idPlato = 0;
             String nombre = request.getParameter("nombre");
             double precio = parseDouble(request.getParameter("precio"));
+            int categoria = parseInt(request.getParameter("categorias"));
             int tipo = parseInt(request.getParameter("tipo"));
-//            int id_categoria = parseInt(request.getParameter("id_categoria"));
 
+            Categoria c = new Categoria(categoria);
 
-            Platos p = new Platos(idPlato, nombre, precio, tipo);
+            Platos p = new Platos(idPlato, nombre, precio, c, tipo);
 
             if (miEjb.insertPlato(p)) {
                 request.setAttribute("resultado", STATUS_OK);
             } else {
                 request.setAttribute("resultado", STATUS_ERROR);
             }
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            request.getRequestDispatcher("/indexChef.jsp").forward(request, response);
         }
     }
 
