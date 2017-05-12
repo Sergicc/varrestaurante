@@ -40,6 +40,14 @@
         <servlet-name>CerrarSesion</servlet-name>
         <servlet-class>servlets.CerrarSesion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewPlatoIngredientes</servlet-name>
+        <servlet-class>servlets.NewPlatoIngredientes</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AllPlatoIngredientes</servlet-name>
+        <servlet-class>servlets.AllPlatoIngredientes</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewUsuario</servlet-name>
         <url-pattern>/NewUsuario</url-pattern>
@@ -79,6 +87,14 @@
     <servlet-mapping>
         <servlet-name>CerrarSesion</servlet-name>
         <url-pattern>/CerrarSesion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewPlatoIngredientes</servlet-name>
+        <url-pattern>/NewPlatoIngredientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AllPlatoIngredientes</servlet-name>
+        <url-pattern>/AllPlatoIngredientes</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
