@@ -28,9 +28,9 @@
         </div>
         <ul class="snip1555">
             <li class="current"><a href="index.jsp" data-hover="Inicio">Inicio</a></li>
-            <li><a href="#" data-hover="Menus">Menús</a></li>
+            <li><a href="AllMenu.jsp" data-hover="Menus">Menús</a></li>
             <li><a href="AllCarta.jsp" data-hover="Carta">Carta</a></li>
-            <li><a href="#" data-hover="¿Quienes somos?">¿Quienes somos?</a></li>
+            <li><a href="QuienesSomos.jsp" data-hover="¿Quienes somos?">¿Quienes somos?</a></li>
                 <%
                     String login = (String) session.getAttribute("mail");
                     if (login != null) {
@@ -145,7 +145,6 @@
             </figure>
 
         </div>
-    </div>
     <!--       <div class="container">
                     <div class="row">
                         <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">

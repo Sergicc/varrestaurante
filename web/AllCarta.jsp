@@ -25,9 +25,25 @@
         </div>
         <ul class="snip1555">
             <li class="current"><a href="index.jsp" data-hover="Inicio">Inicio</a></li>
-            <li><a href="#" data-hover="Menus">Menús</a></li>
+            <li><a href="AllMenu.jsp" data-hover="Menus">Menús</a></li>
             <li><a href="AllCarta.jsp" data-hover="Carta">Carta</a></li>
-            <li><a href="#" data-hover="¿Quienes somos?">¿Quienes somos?</a></li>
+            <li><a href="QuienesSomos.jsp" data-hover="¿Quienes somos?">¿Quienes somos?</a></li>
+                <%
+                    String login = (String) session.getAttribute("mail");
+                    if (login != null) {
+                %>
+            <div class="logued">
+                Hola, 
+                <b>
+                    <%= login%>
+                </b>
+            </div>
+            <div class="cerrar">
+                <form action="CerrarSesion" method="POST" class="form-inline my-2 my-lg-0">
+                    <button name="cerrar" value="salir" class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar Sesión</button>
+                </form>
+            </div>
+            <% } else { %>
             <li>
                 <form action="Login" method="POST" class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="mail" name="mail">
@@ -42,6 +58,8 @@
                     </div>
                 </form>
             </li>
+            <% } %>
+
         </ul>
         <div class="container">
             
