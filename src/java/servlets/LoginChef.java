@@ -39,7 +39,6 @@ public class LoginChef extends HttpServlet {
                 request.setAttribute("resultado", "Usuario o contraseña incorrecta.");
                 request.getRequestDispatcher("/mynameischef.jsp").forward(request, response);
             }
-
         }
     }
 
