@@ -32,6 +32,10 @@
         <servlet-name>LoginChef</servlet-name>
         <servlet-class>servlets.LoginChef</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewReserva</servlet-name>
+        <servlet-class>servlets.NewReserva</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewUsuario</servlet-name>
         <url-pattern>/NewUsuario</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>AllCategorias</servlet-name>
         <url-pattern>/AllCategorias</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewReserva</servlet-name>
+        <url-pattern>/NewReserva</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

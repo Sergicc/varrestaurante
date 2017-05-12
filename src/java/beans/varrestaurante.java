@@ -8,6 +8,7 @@ package beans;
 import entities.Categoria;
 import entities.Ingredientes;
 import entities.Platos;
+import entities.Reservas;
 import entities.Usuarios;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -154,5 +155,13 @@ public class varrestaurante {
         em.close();
 //        return encontrado != null;
         return false;
+    }
+    
+    public boolean insertReserva(Reservas r) {
+        
+        EntityManager em = emf.createEntityManager();
+            em.persist(r);
+            em.close();
+            return true;
     }
 }
