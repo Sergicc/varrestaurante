@@ -1,3 +1,15 @@
+.logued{
+    color: white; 
+    display: inline-block; 
+    border: 1px solid white;
+    padding: 5px;
+}
+
+.cerrar{
+    color: white;
+    display: inline-block;
+}
+
 /*body {
           padding-top: 50px;
           position: relative;
@@ -280,6 +292,7 @@ body {
 .snip1369 h3,
 .snip1369 p {
   margin: 0;
+  text-align: center;
 }
 .snip1369 h3 {
   font-weight: 700;

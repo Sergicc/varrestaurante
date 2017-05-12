@@ -36,6 +36,10 @@
         <servlet-name>NewReserva</servlet-name>
         <servlet-class>servlets.NewReserva</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CerrarSesion</servlet-name>
+        <servlet-class>servlets.CerrarSesion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewUsuario</servlet-name>
         <url-pattern>/NewUsuario</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>NewReserva</servlet-name>
         <url-pattern>/NewReserva</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CerrarSesion</servlet-name>
+        <url-pattern>/CerrarSesion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
