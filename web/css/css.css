@@ -1,4 +1,4 @@
-body {
+/*body {
           padding-top: 50px;
           position: relative;
       }
@@ -29,4 +29,324 @@ body {
           .side-collapse.in {
               width:0;
           }
-      }
+      }*/
+/*-----------------NAVBAR------------------------*/
+
+@import url(https://fonts.googleapis.com/css?family=Muli);
+
+ul.snip1555{
+    width: auto;
+    display: inline-block;
+    position: relative;
+    bottom: 27px;
+}
+.snip1555 {
+    font-family: 'Muli', Arial, sans-serif;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    line-height: 1em;
+    margin: 15px 40px;
+    text-transform: uppercase;
+}
+.snip1555 li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: 0.5em 0.6em;
+    padding: 12px 15px;
+    position: relative;
+}
+.snip1555 li a {
+    color: #fff;
+    text-decoration: none;
+}
+.snip1555 li:before,
+.snip1555 li:after {
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+    height: 2px;
+    width: 35%;
+    background-color: #528cb3;
+    position: absolute;
+    content: '';
+    opacity: 0;
+}
+.snip1555 li:before {
+    top: 0;
+    left: 0;
+}
+.snip1555 li:after {
+    bottom: 0;
+    right: 0;
+}
+.snip1555 li:hover:before,
+.snip1555 li.hover:before,
+.snip1555 li:hover:after,
+.snip1555 li.hover:after {
+    opacity: 1;
+}
+.snip1555 li:hover:before,
+.snip1555 li.hover:before {
+    left: 65%;
+}
+.snip1555 li:hover:after,
+.snip1555 li.hover:after {
+    right: 65%;
+}
+/* Demo purposes only */
+body {
+    background-color: #212121;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+/*-----------------------------------------*/
+
+
+/*-----------------TÍTULO------------------------*/
+@import url(https://fonts.googleapis.com/css?family=Raleway:500);
+@import url(https://fonts.googleapis.com/css?family=Teko:700);
+.snip1537 {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    display: inline-block;
+    color: #bdbdbd;
+    margin: 60px 20px;
+    max-width: 285px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.snip1537 h1,
+.snip1537 h5 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.snip1537 h1 {
+    font-family: 'Teko', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 54px;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    line-height: 27px;
+}
+
+.snip1537 h5 {
+    background-color: #bdbdbd;
+    color: #212121;
+    display: inline-block;
+    font-size: 0.6em;
+    font-weight: 700;
+    line-height: 18px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.snip1537 h5:before,
+.snip1537 h5:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 2px;
+    border-width: 9px 5px;
+    border-style: solid;
+    opacity: 0.8;
+}
+
+.snip1537 h5:before {
+    right: 100%;
+    border-color: #bdbdbd #bdbdbd #bdbdbd transparent;
+}
+
+.snip1537 h5:after {
+    left: 100%;
+    border-color: #bdbdbd transparent #bdbdbd #bdbdbd;
+}
+
+.snip1537 h6 {
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.snip1537 h6:before,
+.snip1537 h6:after {
+    position: absolute;
+    height: 2px;
+    content: '';
+    width: 30px;
+    top: 50%;
+    border-top: 2px solid #bdbdbd;
+    border-bottom: 2px solid #bdbdbd;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.snip1537 h6:before {
+    left: -35px;
+}
+
+.snip1537 h6:after {
+    right: -35px;
+}
+
+.snip1537 i {
+    font-size: 22px;
+    line-height: 36px;
+}
+
+
+/* Demo purposes only */
+
+body {
+    background-color: #212121;
+    text-align: center;
+}
+
+/*-----------------------------------------*/
+
+/*------------------FIGURES-----------------------*/
+
+@import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
+.snip1369 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  background: #20638f;
+  text-align: left;
+  color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+}
+.snip1369 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.snip1369 > img,
+.snip1369 .image img {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  max-width: 100%;
+}
+.snip1369 > img {
+  vertical-align: top;
+  position: relative;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  opacity: 0.6;
+}
+.snip1369 figcaption,
+.snip1369 .image {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+.snip1369 .image {
+  position: absolute;
+  top: 0;
+  bottom: 25%;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1), 0px 1px 0 rgba(255, 255, 255, 0.2);
+}
+.snip1369 .image img {
+  position: absolute;
+  top: 0;
+}
+.snip1369 figcaption {
+  position: absolute;
+  top: 75%;
+  bottom: 46px;
+  left: 20px;
+  right: 20px;
+  border-bottom: 2px solid #ffffff;
+  padding-top: 20px;
+  z-index: 1;
+}
+.snip1369 h3,
+.snip1369 p {
+  margin: 0;
+}
+.snip1369 h3 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+.snip1369 p {
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  font-weight: 400;
+  opacity: 0;
+}
+.snip1369 .read-more {
+  display: block;
+  opacity: 0;
+  -webkit-transform: translateX(-20px);
+  transform: translateX(-20px);
+  line-height: 48px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0 20px;
+  color: #ffffff;
+  right: 0;
+  bottom: 0;
+  font-weight: 500;
+  position: absolute;
+}
+.snip1369 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+.snip1369:hover .read-more,
+.snip1369.hover .read-more,
+.snip1369:hover figcaption,
+.snip1369.hover figcaption {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+.snip1369:hover figcaption,
+.snip1369.hover figcaption,
+.snip1369:hover .image,
+.snip1369.hover .image {
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.snip1369:hover figcaption,
+.snip1369.hover figcaption {
+  top: 50%;
+}
+.snip1369:hover .image,
+.snip1369.hover .image {
+  bottom: 50%;
+}
+.snip1369:hover p,
+.snip1369.hover p {
+  opacity: 1;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+/* Demo purposes only */
+body {
+  background-color: #212121;
+}
+
+/*-----------------------------------------*/
