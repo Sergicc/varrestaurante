@@ -29,7 +29,7 @@
         <ul class="snip1555">
             <li class="current"><a href="index.jsp" data-hover="Inicio">Inicio</a></li>
             <li><a href="AllMenu.jsp" data-hover="Menus">Menús</a></li>
-            <li><a href="AllCarta.jsp" data-hover="Carta">Carta</a></li>
+            <li><a href="AllCarta" data-hover="Carta">Carta</a></li>
             <li><a href="QuienesSomos.jsp" data-hover="¿Quienes somos?">¿Quienes somos?</a></li>
                 <%
                     String login = (String) session.getAttribute("mail");
@@ -49,8 +49,8 @@
             <% } else { %>
             <li>
                 <form action="Login" method="POST" class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="mail" name="mail">
-                    <input class="form-control mr-sm-2" type="password" placeholder="pass" name="pass">
+                    <input class="form-control mr-sm-2" type="text" placeholder="email" name="mail">
+                    <input class="form-control mr-sm-2" type="password" placeholder="contraseña" name="pass">
                     <button name="login" value="entrar" class="btn btn-outline-success my-2 my-sm-0" type="submit">Acceder</button>
                 </form>
             </li>
@@ -97,7 +97,7 @@
                 </figcaption><span class="read-more">
 
                     Ver más <i class="ion-android-arrow-forward"></i></span>
-                <a href="AllCarta.jsp"></a>
+                <a href="QuienesSomos.jsp"></a>
             </figure>
 
             <figure class="snip1369 orange"><img src="media/0cb4c30e96d171a40e06ca00e3dae559.jpg" alt="pr-sample16" />
@@ -108,7 +108,7 @@
                 </figcaption><span class="read-more">
 
                     Ver más <i class="ion-android-arrow-forward"></i></span>
-                <a href="AllCarta.jsp"></a>
+                <a href="AllMenu.jsp"></a>
             </figure>
 
             <figure class="snip1369 orange"><img src="media/1296774001_850215_0000000000_sumario_normal.jpg" alt="pr-sample16" />
@@ -132,12 +132,11 @@
                     Ver más <i class="ion-android-arrow-forward"></i></span>
                 <a href="AllCarta.jsp"></a>
             </figure>
-
-            <figure class="snip1369 orange"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample16.jpg" alt="pr-sample16" />
-                <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample16.jpg" alt="pr-sample16" /></div>
+            <figure class="snip1369 orange"><img src="media/1336383244_850215_0000000004_sumario_normal.jpg" alt="pr-sample16" />
+                <div class="image"><img src="media/1336383244_850215_0000000004_sumario_normal.jpg" alt="pr-sample16" /></div>
                 <figcaption>
-                    <h3>Quiche Hollandaise</h3>
-                    <p>The only skills I have patience to learn are those that have no real application in life.</p>
+                    <h3>Sala VIP</h3>
+                    <p>Sala VIP sólo para reservas, ten una velada encantadora y tranquila. Si es tu aniversario puedes pedir un descuento.</p>
                 </figcaption><span class="read-more">
 
                     Ver más <i class="ion-android-arrow-forward"></i></span>

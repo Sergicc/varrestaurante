@@ -28,7 +28,7 @@
         <ul class="snip1555">
             <li class="current"><a href="index.jsp" data-hover="Inicio">Inicio</a></li>
             <li><a href="AllMenu.jsp" data-hover="Menus">Menús</a></li>
-            <li><a href="AllCarta.jsp" data-hover="Carta">Carta</a></li>
+            <li><a href="AllCarta" data-hover="Carta">Carta</a></li>
             <li><a href="QuienesSomos.jsp" data-hover="¿Quienes somos?">¿Quienes somos?</a></li>
                 <%
                     String login = (String) session.getAttribute("mail");

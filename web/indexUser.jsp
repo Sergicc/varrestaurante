@@ -27,7 +27,7 @@
         <ul class="snip1555">
             <li class="current"><a href="indexUser.jsp" data-hover="Inicio">Inicio</a></li>
             <li><a href="AllMenu.jsp" data-hover="Menus">Menús</a></li>
-            <li><a href="AllCarta.jsp" data-hover="Carta">Carta</a></li>
+            <li><a href="AllCarta" data-hover="Carta">Carta</a></li>
             <li><a href="QuienesSomos.jsp" data-hover="¿Quienes somos?">¿Quienes somos?</a></li>
 
 
@@ -62,7 +62,6 @@
             <strong><%= registro%></strong>
             <% }%>
         </div>
-
         <form action="NewReserva.jsp" method="POST">
             <div align="right">
                 <input type="submit" value="Haz tu reserva">
