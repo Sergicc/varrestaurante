@@ -7,6 +7,7 @@ package beans;
 
 import entities.Categoria;
 import entities.Ingredientes;
+import entities.PlatoIngredientes;
 import entities.Platos;
 import entities.Reservas;
 import entities.Usuarios;
@@ -61,7 +62,7 @@ public class varrestaurante {
             return false;
         }
     }
-    
+
     public boolean loginChef(String emailChef, String password) {
         EntityManager em = emf.createEntityManager();
         //TODO tenir en compte que ha de ser rol 1 (usuario)
@@ -132,12 +133,19 @@ public class varrestaurante {
             return true;
         }
     }
-    
-        public List<Categoria> selectAllCategorias() {
+
+    public List<Categoria> selectAllCategorias() {
         return emf.createEntityManager().createNamedQuery("Categoria.findAll").getResultList();
     }
-        
-        
+
+    public List<Platos> selectAllPlatos() {
+        return emf.createEntityManager().createNamedQuery("Platos.findAll").getResultList();
+    }
+
+    public List<Ingredientes> selectAllIngredientes() {
+        return emf.createEntityManager().createNamedQuery("Ingredientes.findAll").getResultList();
+    }
+
     public boolean insertPlato(Platos p) {
         if (!existPlato(p)) {
             EntityManager em = emf.createEntityManager();
@@ -156,12 +164,20 @@ public class varrestaurante {
 //        return encontrado != null;
         return false;
     }
-    
+
     public boolean insertReserva(Reservas r) {
-        
+
         EntityManager em = emf.createEntityManager();
-            em.persist(r);
-            em.close();
-            return true;
+        em.persist(r);
+        em.close();
+        return true;
     }
+
+    public boolean insertPlatoIngredientes(PlatoIngredientes pi) {
+        EntityManager em = emf.createEntityManager();
+        em.persist(pi);
+        em.close();
+        return true;
+    }
+
 }

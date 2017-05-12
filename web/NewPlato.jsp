@@ -19,19 +19,19 @@
 
             <p>Nombre: <input type="text" name="nombre"></p>
             <p>Precio: <input type="number" name="precio"></p>
-            
-             <p>Categoria: <select name="categorias">
-            <% 
-        List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias");
-        for (Categoria categoria : categorias) {
-            %>
-            
-            <option value="<%= categoria.getIdCategoria() %>"><%= categoria.getNombre() %></option>
 
-        <% }
-        %>
-        </select>
-        
+            <p>Categoria: <select name="categorias">
+                    <%
+                        List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias");
+                        for (Categoria categoria : categorias) {
+                    %>
+
+                    <option value="<%= categoria.getIdCategoria()%>"><%= categoria.getNombre()%></option>
+
+                    <% }
+                    %>
+                </select>
+
             <p>Tipo: <select name="tipo">
                     <option value="1">Primer plato</option> 
                     <option value="2">Segundo plato</option> 

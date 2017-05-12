@@ -5,13 +5,13 @@
  */
 package servlets;
 
+import entities.Ingredientes;
 import entities.Platos;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,8 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author usu26
  */
-@WebServlet(name = "Carta", urlPatterns = {"/Carta"})
-public class AllCarta extends HttpServlet {
+public class AllPlatoIngredientes extends HttpServlet {
 
     @EJB
     beans.varrestaurante miEjb;
@@ -33,10 +32,14 @@ public class AllCarta extends HttpServlet {
         List<Platos> platos = miEjb.selectAllPlatos();
         request.setAttribute("platos", platos);
         
-        request.getRequestDispatcher("/AllCarta.jsp").forward(request, response);
+        List<Ingredientes> ingredientes = miEjb.selectAllIngredientes();
+        request.setAttribute("ingredientes", ingredientes);
+        
+
+          request.getRequestDispatcher("/NewPlatoIngredientes.jsp").forward(request, response);
+
         
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

@@ -5,13 +5,13 @@
  */
 package servlets;
 
-import entities.Platos;
+import beans.varrestaurante;
+import entities.PlatoIngredientes;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
+import static java.lang.Integer.parseInt;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,21 +20,46 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author usu26
  */
-@WebServlet(name = "Carta", urlPatterns = {"/Carta"})
-public class AllCarta extends HttpServlet {
+public class NewPlatoIngredientes extends HttpServlet {
 
     @EJB
-    beans.varrestaurante miEjb;
-    
+    varrestaurante miEjb;
+
+    public static final String STATUS_OK = "Ingrediente asignado correctamente";
+    public static final String STATUS_ERROR = "error";
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        List<Platos> platos = miEjb.selectAllPlatos();
-        request.setAttribute("platos", platos);
-        
-        request.getRequestDispatcher("/AllCarta.jsp").forward(request, response);
-        
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            if ("Asignar ingrediente al plato".equals(request.getParameter("asignar"))) {
+
+                int plato = parseInt(request.getParameter("platos"));
+                int ingrediente = parseInt(request.getParameter("ingredientes"));
+
+//                Integer gramos = null;
+//                Integer mililitros = null;
+//                if (request.getParameterMap().containsKey("gramos")) {
+//                    gramos = parseInt(request.getParameter("gramos"));
+//                }
+//                if (request.getParameterMap().containsKey("mililitros")) {
+//                    mililitros = parseInt(request.getParameter("mililitros"));
+//                }
+                
+                PlatoIngredientes pi = new PlatoIngredientes(plato, ingrediente);
+                
+//                pi.setGramos(gramos);
+//                pi.setMililitros(mililitros);
+
+                if (miEjb.insertPlatoIngredientes(pi)) {
+                    request.setAttribute("resultado", STATUS_OK);
+                } else {
+                    request.setAttribute("resultado", STATUS_ERROR);
+                }
+                request.getRequestDispatcher("/indexChef.jsp").forward(request, response);
+            }
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

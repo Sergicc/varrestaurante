@@ -46,6 +46,14 @@
             <input type="submit" name="NuevoPlato" value="New Plato">
         </form>
 
+        <form action="NewIngrediente.jsp" method="POST">
+            <input type="submit" value="New Ingrediente">
+        </form> 
+        
+        <form action="AllPlatoIngredientes" method="POST">
+            <input type="submit" value="Asignar Ingredientes a Platos">
+        </form> 
+
         <form action="NewCategoria" method="POST">
             <p>Nombre de la categoría: <input type="text" name="nombre"></p>
 

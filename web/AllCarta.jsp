@@ -4,6 +4,8 @@
     Author     : 53868459K
 --%>
 
+<%@page import="entities.Platos"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -62,7 +64,27 @@
 
         </ul>
         <div class="container">
-            
+            <form action="AllCarta" method="POST">
+ 
+                        <button value="Registro" class="btn btn-outline-success my-2 my-sm-0" type="submit">Registrate</button>
+                </form>
+            <table>
+                <tr>
+                    <th>IdPlato</th>
+                    <th>Nombre</th>             
+                </tr>
+                <%
+                    List<Platos> plato = (List<Platos>) request.getAttribute("platos");
+                    for (Platos p : plato) {
+                %>
+                <tr>
+
+                    <td><%= p.getIdPlato()%></td> 
+                    <td><%= p.getNombre()%></td> 
+                </tr>
+                <% }
+                %>
+            </table>
         </div>
     </body>
 </html>

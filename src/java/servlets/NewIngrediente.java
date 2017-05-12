@@ -59,7 +59,7 @@ public class NewIngrediente extends HttpServlet {
             } else {
                 request.setAttribute("resultado", STATUS_ERROR);
             }
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            request.getRequestDispatcher("/indexChef.jsp").forward(request, response);
 
         }
     }
