@@ -18,13 +18,13 @@
     </head>
     <body>
 
-        <h1>Hello! </h1> <%
+         <%
             String loginChef = (String) session.getAttribute("mailChef");
             if (loginChef != null) {
         %>
-        <%= loginChef%>
-        <% }%>
-
+        <h1>Hello! </h1> <%= loginChef%>
+        
+        
         <%
             String registro = (String) request.getAttribute("resultadoChef");
             if (registro != null) {
@@ -51,6 +51,8 @@
 
             <input type="submit" name="altaCategoria" value="Nueva Categoria">
         </form>
+
+        <% }%>
 
     </body>
 </html>
