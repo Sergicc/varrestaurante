@@ -56,6 +56,14 @@
         <servlet-name>NewUsuarioChef</servlet-name>
         <servlet-class>servlets.NewUsuarioChef</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AllMenu</servlet-name>
+        <servlet-class>servlets.AllMenu</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QuienesSomos</servlet-name>
+        <servlet-class>servlets.QuienesSomos</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewUsuario</servlet-name>
         <url-pattern>/NewUsuario</url-pattern>
@@ -111,6 +119,14 @@
     <servlet-mapping>
         <servlet-name>NewUsuarioChef</servlet-name>
         <url-pattern>/NewUsuarioChef</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AllMenu</servlet-name>
+        <url-pattern>/AllMenu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuienesSomos</servlet-name>
+        <url-pattern>/QuienesSomos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -18,8 +18,8 @@
             <p>Nombre: <input type="text" name="nombre"></p>
         </p>
         <p>Apellidos: <input type="text" name="apellidos"></p>
-        <p>Contraseña: <input type="text" name="password"></p>
-        <p>Repite Contraseña: <input type="text" name="repitePassword"></p>
+        <p>Contraseña: <input type="password" name="password"></p>
+        <p>Repite Contraseña: <input type="password" name="repitePassword"></p>
 
 
         <input type="submit" name="alta" value="Registro">

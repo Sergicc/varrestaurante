@@ -26,9 +26,9 @@
         </div>
         <ul class="snip1555">
             <li class="current"><a href="indexUser.jsp" data-hover="Inicio">Inicio</a></li>
-            <li><a href="AllMenu.jsp" data-hover="Menus">Menús</a></li>
+            <li><a href="AllMenu" data-hover="Menus">Menús</a></li>
             <li><a href="AllCarta" data-hover="Carta">Carta</a></li>
-            <li><a href="QuienesSomos.jsp" data-hover="¿Quienes somos?">¿Quienes somos?</a></li>
+            <li><a href="QuienesSomos" data-hover="¿Quienes somos?">¿Quienes somos?</a></li>
 
 
             <%
@@ -78,7 +78,7 @@
                 </figcaption><span class="read-more">
 
                     Ver más <i class="ion-android-arrow-forward"></i></span>
-                <a href="AllCarta.jsp"></a>
+                <a href="AllCarta"></a>
             </figure>
 
             <figure class="snip1369 blue"><img src="media/10500581_857235250999847_3707550043305373492_n-e1427418362648.jpg" alt="pr-sample18" />
@@ -89,7 +89,7 @@
                 </figcaption><span class="read-more">
 
                     Ver más <i class="ion-android-arrow-forward"></i></span>
-                <a href="AllCarta.jsp"></a>
+                <a href="QuienesSomos"></a>
             </figure>
 
             <figure class="snip1369 orange"><img src="media/0cb4c30e96d171a40e06ca00e3dae559.jpg" alt="pr-sample16" />
@@ -100,7 +100,7 @@
                 </figcaption><span class="read-more">
 
                     Ver más <i class="ion-android-arrow-forward"></i></span>
-                <a href="AllCarta.jsp"></a>
+                <a href="AllMenu"></a>
             </figure>
 
             <figure class="snip1369 orange"><img src="media/1296774001_850215_0000000000_sumario_normal.jpg" alt="pr-sample16" />
@@ -122,18 +122,18 @@
                 </figcaption><span class="read-more">
 
                     Ver más <i class="ion-android-arrow-forward"></i></span>
-                <a href="AllCarta.jsp"></a>
+                <a href="AllCarta"></a>
             </figure>
 
-            <figure class="snip1369 orange"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample16.jpg" alt="pr-sample16" />
-                <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample16.jpg" alt="pr-sample16" /></div>
+            <figure class="snip1369 orange"><img src="media/1336383244_850215_0000000004_sumario_normal.jpg" alt="pr-sample16" />
+                <div class="image"><img src="media/1336383244_850215_0000000004_sumario_normal.jpg" alt="pr-sample16" /></div>
                 <figcaption>
-                    <h3>Quiche Hollandaise</h3>
-                    <p>The only skills I have patience to learn are those that have no real application in life.</p>
+                    <h3>Sala VIP</h3>
+                    <p>Sala VIP sólo para reservas, ten una velada encantadora y tranquila. Si es tu aniversario puedes pedir un descuento.</p>
                 </figcaption><span class="read-more">
 
                     Ver más <i class="ion-android-arrow-forward"></i></span>
-                <a href="AllCarta.jsp"></a>
+                <a href="NewUsuario.jsp"></a>
             </figure>
 
         </div>

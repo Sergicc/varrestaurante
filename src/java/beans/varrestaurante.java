@@ -180,4 +180,8 @@ public class varrestaurante {
         return true;
     }
 
+    public List<Usuarios> selectAllUsuariosChef() {
+         return emf.createEntityManager().createNamedQuery("Usuarios.findByRolChef").getResultList();
+    }
+
 }

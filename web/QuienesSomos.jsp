@@ -4,13 +4,15 @@
     Author     : 53868459K
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="entities.Usuarios"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-                <link href="css/bootstrap-grid.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-grid.css" rel="stylesheet" type="text/css"/>
         <link href="css/bootstrap-reboot.css" rel="stylesheet" type="text/css"/>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="css/css.css" rel="stylesheet" type="text/css"/>
@@ -18,16 +20,16 @@
         <script src="js/js.js" type="text/javascript"></script>
     </head>
     <body>
-       <div class="snip1537">
+        <div class="snip1537">
             <h1>var</h1>
             <h6>Restaurant</h6><br/>
             <h5>Est. 1992</h5><br/><i class="ion-star"></i>
         </div>
         <ul class="snip1555">
             <li class="current"><a href="index.jsp" data-hover="Inicio">Inicio</a></li>
-            <li><a href="AllMenu.jsp" data-hover="Menus">Menús</a></li>
+            <li><a href="AllMenu" data-hover="Menus">Menús</a></li>
             <li><a href="AllCarta" data-hover="Carta">Carta</a></li>
-            <li><a href="QuienesSomos.jsp" data-hover="¿Quienes somos?">¿Quienes somos?</a></li>
+            <li><a href="QuienesSomos" data-hover="¿Quienes somos?">¿Quienes somos?</a></li>
                 <%
                     String login = (String) session.getAttribute("mail");
                     if (login != null) {
@@ -61,5 +63,24 @@
             <% } %>
 
         </ul>
+
+        <div class="container">
+            <h1 style="color: white">Chefs</h1>
+            <div style="text-align: center; display: inline-block;">
+                <table style="color: white" >
+                    <tr>           
+                    </tr>
+                    <%
+                        List<Usuarios> allusuarioschef = (List<Usuarios>) request.getAttribute("allusuarioschef");
+                        for (Usuarios p : allusuarioschef) {
+                    %>
+                    <tr>
+                        <td><%= p.getNombre()%></td> 
+                    </tr>
+                    <% }
+                    %>
+                </table>
+            </div>
+        </div>
     </body>
 </html>

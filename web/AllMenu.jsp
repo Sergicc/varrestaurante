@@ -4,6 +4,8 @@
     Author     : 53868459K
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="entities.Platos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,9 +26,9 @@
         </div>
         <ul class="snip1555">
             <li class="current"><a href="index.jsp" data-hover="Inicio">Inicio</a></li>
-            <li><a href="AllMenu.jsp" data-hover="Menus">Menús</a></li>
+            <li><a href="AllMenu" data-hover="Menus">Menús</a></li>
             <li><a href="AllCarta" data-hover="Carta">Carta</a></li>
-            <li><a href="QuienesSomos.jsp" data-hover="¿Quienes somos?">¿Quienes somos?</a></li>
+            <li><a href="QuienesSomos" data-hover="¿Quienes somos?">¿Quienes somos?</a></li>
                 <%
                     String login = (String) session.getAttribute("mail");
                     if (login != null) {
@@ -59,5 +61,23 @@
             </li>
             <% } %>
 
-        </ul>
+        </ul>          
+            <div class="container">
+            <h1 style="color: white">Menu</h1>
+            <div style="text-align: center; display: inline-block;">
+            <table style="color: white" >
+                <tr>           
+                </tr>
+                <%
+                    List<Platos> allplatos = (List<Platos>) request.getAttribute("allplatos");
+                    for (Platos p : allplatos) {
+                %>
+                <tr>
+                    <td><%= p.getNombre()%></td> 
+                </tr>
+                <% }
+                %>
+            </table>
+            </div>
+        </div>
 </html>

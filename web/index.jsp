@@ -28,9 +28,9 @@
         </div>
         <ul class="snip1555">
             <li class="current"><a href="index.jsp" data-hover="Inicio">Inicio</a></li>
-            <li><a href="AllMenu.jsp" data-hover="Menus">Menús</a></li>
+            <li><a href="AllMenu" data-hover="Menus">Menús</a></li>
             <li><a href="AllCarta" data-hover="Carta">Carta</a></li>
-            <li><a href="QuienesSomos.jsp" data-hover="¿Quienes somos?">¿Quienes somos?</a></li>
+            <li><a href="QuienesSomos" data-hover="¿Quienes somos?">¿Quienes somos?</a></li>
                 <%
                     String login = (String) session.getAttribute("mail");
                     if (login != null) {
@@ -86,7 +86,7 @@
                 </figcaption><span class="read-more">
 
                     Ver más <i class="ion-android-arrow-forward"></i></span>
-                <a href="AllCarta.jsp"></a>
+                <a href="AllCarta"></a>
             </figure>
 
             <figure class="snip1369 blue"><img src="media/10500581_857235250999847_3707550043305373492_n-e1427418362648.jpg" alt="pr-sample18" />
@@ -97,7 +97,7 @@
                 </figcaption><span class="read-more">
 
                     Ver más <i class="ion-android-arrow-forward"></i></span>
-                <a href="QuienesSomos.jsp"></a>
+                <a href="QuienesSomos"></a>
             </figure>
 
             <figure class="snip1369 orange"><img src="media/0cb4c30e96d171a40e06ca00e3dae559.jpg" alt="pr-sample16" />
@@ -108,7 +108,7 @@
                 </figcaption><span class="read-more">
 
                     Ver más <i class="ion-android-arrow-forward"></i></span>
-                <a href="AllMenu.jsp"></a>
+                <a href="AllMenu"></a>
             </figure>
 
             <figure class="snip1369 orange"><img src="media/1296774001_850215_0000000000_sumario_normal.jpg" alt="pr-sample16" />
@@ -130,7 +130,7 @@
                 </figcaption><span class="read-more">
 
                     Ver más <i class="ion-android-arrow-forward"></i></span>
-                <a href="AllCarta.jsp"></a>
+                <a href="AllCarta"></a>
             </figure>
             <figure class="snip1369 orange"><img src="media/1336383244_850215_0000000004_sumario_normal.jpg" alt="pr-sample16" />
                 <div class="image"><img src="media/1336383244_850215_0000000004_sumario_normal.jpg" alt="pr-sample16" /></div>
@@ -140,48 +140,9 @@
                 </figcaption><span class="read-more">
 
                     Ver más <i class="ion-android-arrow-forward"></i></span>
-                <a href="AllCarta.jsp"></a>
+                <a href="NewUsuario.jsp"></a>
             </figure>
 
         </div>
-    <!--       <div class="container">
-                    <div class="row">
-                        <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
-                            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <a class="navbar-brand" href="#">varRestaurante</a>
-        
-        
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="index.jsp">Home<span class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Menús</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Carta</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">¿Quienes somos?</a>
-                                         proba pilla fotos de chefs y cambiar les cares per les nostres caras hermosas y preciosas
-                                    </li>
-                                </ul>
-                                <form class="form-inline my-2 my-lg-0">
-                                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                                </form>
-                                <form action="Login" method="POST" class="form-inline my-2 my-lg-0">
-                                    <input class="form-control mr-sm-2" type="text" placeholder="mail" name="mail">
-                                    <input class="form-control mr-sm-2" type="password" placeholder="pass" name="pass">
-                                    <button name="login" value="entrar" class="btn btn-outline-success my-2 my-sm-0" type="submit">Acceder</button>
-                                </form>
-        
-                            </div>
-                        </nav>  
-                    </div>
-                </div>-->
 </body>
 </html>
