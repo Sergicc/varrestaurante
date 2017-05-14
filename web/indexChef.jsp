@@ -18,13 +18,13 @@
     </head>
     <body>
 
-         <%
+        <%
             String loginChef = (String) session.getAttribute("mailChef");
             if (loginChef != null) {
         %>
         <h1>Hello! </h1> <%= loginChef%>
-        
-        
+
+
         <%
             String registro = (String) request.getAttribute("resultadoChef");
             if (registro != null) {
@@ -49,7 +49,7 @@
         <form action="NewIngrediente.jsp" method="POST">
             <input type="submit" value="New Ingrediente">
         </form> 
-        
+
         <form action="AllPlatoIngredientes" method="POST">
             <input type="submit" value="Asignar Ingredientes a Platos">
         </form> 

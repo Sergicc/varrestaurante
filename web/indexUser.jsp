@@ -63,8 +63,8 @@
             <% }%>
         </div>
         <form action="NewReserva.jsp" method="POST">
-            <div align="right">
-                <input type="submit" value="Haz tu reserva">
+            <div align="center">
+                <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Haz tu reserva">
             </div>
         </form> 
      <div class="container">

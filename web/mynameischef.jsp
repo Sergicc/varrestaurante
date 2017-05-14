@@ -22,5 +22,10 @@
             <input class="form-control mr-sm-2" type="password" placeholder="pass" name="pass">
             <button name="loginChef" value="entrarChef" class="btn btn-outline-success my-2 my-sm-0" type="submit">Acceder</button>
         </form>
+        <form action="NewChef.jsp" method="POST">
+
+            <button value="Registro" class="btn btn-outline-success my-2 my-sm-0" type="submit">Registrate</button>
+
+        </form>
     </body>
 </html>

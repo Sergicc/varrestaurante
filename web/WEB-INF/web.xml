@@ -48,6 +48,14 @@
         <servlet-name>AllPlatoIngredientes</servlet-name>
         <servlet-class>servlets.AllPlatoIngredientes</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AllCarta</servlet-name>
+        <servlet-class>servlets.AllCarta</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewUsuarioChef</servlet-name>
+        <servlet-class>servlets.NewUsuarioChef</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewUsuario</servlet-name>
         <url-pattern>/NewUsuario</url-pattern>
@@ -95,6 +103,14 @@
     <servlet-mapping>
         <servlet-name>AllPlatoIngredientes</servlet-name>
         <url-pattern>/AllPlatoIngredientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AllCarta</servlet-name>
+        <url-pattern>/AllCarta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewUsuarioChef</servlet-name>
+        <url-pattern>/NewUsuarioChef</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

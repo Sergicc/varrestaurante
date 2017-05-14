@@ -64,18 +64,15 @@
 
         </ul>
         <div class="container">
-            <form action="AllCarta" method="POST">
- 
-                        <button value="Registro" class="btn btn-outline-success my-2 my-sm-0" type="submit">Registrate</button>
-                </form>
+            <h1>Carta</h1>
             <table>
                 <tr>
                     <th>IdPlato</th>
                     <th>Nombre</th>             
                 </tr>
                 <%
-                    List<Platos> plato = (List<Platos>) request.getAttribute("platos");
-                    for (Platos p : plato) {
+                    List<Platos> allplatos = (List<Platos>) request.getAttribute("allplatos");
+                    for (Platos p : allplatos) {
                 %>
                 <tr>
 
